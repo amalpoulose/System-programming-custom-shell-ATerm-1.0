@@ -5,7 +5,7 @@ void command(char *s)
 {
 	char *p[60];
 	space_bgn(s);
-	arr_str(p,s);
+	seperator(p,s,' ');
 
 	if(strcmp(*p,"hist")==0)
 		hist(q);
@@ -26,18 +26,6 @@ void defaultcmd(char **p)
 		printf("%s: command not found\n",*p);
 }
 
-void seperator(char **s,char *p,char ch)
-{
-while(*p!='\0')
-{
- while(*p==ch || *p=='\0')
-   *p++='\0';
- *s++=p;
- while(*p!=ch && *p!='\0')
- p++;
- 
-}
-*s='\0';
-}
+
 
 
