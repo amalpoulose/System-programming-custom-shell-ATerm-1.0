@@ -1,17 +1,13 @@
-#include "header.h"
-QUE *q;
-int size ;
-void arr_str(char **p,char *s)
+void seperator(char **s,char *p,char ch)
 {
-	int i,j=0,k=0; 
-	while(*s!='\0')  
-	{
-		while(*s==' '||*s=='\0')
-			*s++='\0';
-		*p++= s;
-		while(*s!=' ' &&  *s !='\0')
-			s++; 	
-	}
-	*p='\0';
+while(*p!='\0')
+{
+ while(*p==ch || *p=='\0')
+   *p++='\0';
+ *s++=p;
+ while(*p!=ch && *p!='\0')
+ p++;
+ 
 }
-
+*s='\0';
+}
