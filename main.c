@@ -38,15 +38,16 @@ int main(int argc,char **argv)
 			space_bgn(cmd);
 			//			printf("%s\n",cmd);
 
-			for(j=0;cmd[j];j++)
-			{
-				if(cmd[j]=='|')
-				{
-					//			printf("%s\n",cmd);
-					pipecmd(cmd);
-					goto A;
-				}
-			}
+			 if(strchr(cmd,'|'))
+                        {
+                                pipecmd(cmd);
+                                goto A;
+                        }
+                        else if(strchr(cmd,'>'))
+                        {
+                                contentcmd(cmd);
+                                goto A;
+                        }
 			if(strcmp(cmd,"exit")==0)	
 				return;
 			else if(strcmp(cmd,"quit")==0)	
