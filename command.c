@@ -26,12 +26,18 @@ void defaultcmd(char **p)
 		printf("%s: command not found\n",*p);
 }
 
-void seperator(char *s1,char *s2,char *p,char ch)
+void seperator(char **s,char *p,char ch)
 {
-	int i;
-	for(i=0;p[i]!=ch;i++)
-		s1[i]=p[i];
-	s1[i]='\0';        
-	strcpy(s2,p+i+1);
+while(*p!='\0')
+{
+ while(*p==ch || *p=='\0')
+   *p++='\0';
+ *s++=p;
+ while(*p!=ch && *p!='\0')
+ p++;
+ 
 }
+*s='\0';
+}
+
 
