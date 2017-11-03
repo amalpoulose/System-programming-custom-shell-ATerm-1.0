@@ -31,6 +31,7 @@ void seperator(char *s1,char *s2,char *p,char ch)
 	int i;
 	for(i=0;p[i]!=ch;i++)
 		s1[i]=p[i];
-	s1[i]='\0';
+	s1[i]='\0';        
+	strcpy(s2,p+i+1);
 }
 
