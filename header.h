@@ -20,7 +20,6 @@ typedef struct node
 void space_bgn(char *);
 void pipecmd(char *);
 void command(char *);
-void arr_str(char **,char *);
 void command(char *);
 void defaultcmd(char **);
 void enqueue(QUE **,char*,int);
