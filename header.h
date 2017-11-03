@@ -25,4 +25,4 @@ void command(char *);
 void defaultcmd(char **);
 void enqueue(QUE **,char*,int);
 void dequeue(QUE **);
-
+void seperator(char **,char *,char);
