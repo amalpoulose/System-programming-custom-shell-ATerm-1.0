@@ -1,6 +1,8 @@
 #include "header.h"
+
 QUE *q;
 int size;
+
 void command(char *s)
 {
 	char *p[60];
