@@ -69,7 +69,8 @@ S:
                                 printf("%d\n",getpid());
                         else if(strstr(cmd,"pPid ")||strcmp(cmd,"pPid")==0)
                                 printf("%d\n",getppid());
-			
+			else if(strcmp(cmd,"cd")==0)
+                                chdir("/home");
 			else if((strstr(cmd,"cd "))||(strstr(cmd,"chdir ")))
                         {
 
