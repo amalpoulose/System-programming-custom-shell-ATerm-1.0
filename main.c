@@ -22,7 +22,8 @@ int main(int argc,char **argv)
         path=malloc(130);
 	while(1)
 	{
-		printf("< %d ATerm: >",count);
+		getcwd(path,130);
+                printf("< %d ATerm: %s >",count,path);
 		scanf(" %[^\n]",s);
 
 		//split multiple commands given by ;
