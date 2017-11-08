@@ -22,9 +22,15 @@ int main(int argc,char **argv)
         path=malloc(130);
 	while(1)
 	{
-		getcwd(path,130);
+S:
+                getcwd(path,130);
                 printf("< %d ATerm: %s >",count,path);
-		scanf(" %[^\n]",s);
+                scanf(" %[^\n]",s);
+                if(strlen(s)>128)
+                {
+                        printf("Characters exceeded the limit\n");
+                        goto S;
+                }
 
 		//split multiple commands given by ;
 		for(i=0,inx=0;i<=strlen(s);i++)
@@ -55,6 +61,16 @@ int main(int argc,char **argv)
 				return;
 			else if(strcmp(cmd,"quit")==0)	
 				return;
+			else if((strstr(cmd,"cd "))||(strstr(cmd,"chdir ")))
+                        {
+
+                                char *p[60];
+                                space_bgn(cmd);
+                                seperator(p,cmd,' ');
+                                if(chdir(*(p+1))==-1)
+                                        perror(*p);
+                        }
+			
 			else
 			{
 				if(fork()==0)
