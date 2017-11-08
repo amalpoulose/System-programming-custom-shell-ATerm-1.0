@@ -14,7 +14,7 @@ int main(int argc,char **argv)
 			return;
 		}
 	} 
-	char *s,*cmd;
+	char *s,*cmd,*path;
 	int count=1,i,j,k,l,inx;
 	s=malloc(129);
 	cmd=malloc(129);
