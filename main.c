@@ -61,6 +61,15 @@ S:
 				return;
 			else if(strcmp(cmd,"quit")==0)	
 				return;
+			if(strstr(cmd,"exit ")||strcmp(cmd,"exit")==0)
+                                return;
+                        else if(strstr(cmd,"quit ")||strcmp(cmd,"quit")==0)     
+                                return;
+                        else if(strstr(cmd,"curPid ")||strcmp(cmd,"curPid")==0)
+                                printf("%d\n",getpid());
+                        else if(strstr(cmd,"pPid ")||strcmp(cmd,"pPid")==0)
+                                printf("%d\n",getppid());
+			
 			else if((strstr(cmd,"cd "))||(strstr(cmd,"chdir ")))
                         {
 
