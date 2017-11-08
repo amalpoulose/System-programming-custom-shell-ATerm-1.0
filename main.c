@@ -18,6 +18,8 @@ int main(int argc,char **argv)
 	int count=1,i,j,k,l,inx;
 	s=malloc(129);
 	cmd=malloc(129);
+	chdir("/home");
+        path=malloc(130);
 	while(1)
 	{
 		printf("< %d ATerm: >",count);
